@@ -1,6 +1,6 @@
 # Make My Marriage — Project Status
 
-**Last updated:** 2026-09-12
+**Last updated:** 2026-11-17
 
 This is the ongoing record of major development milestones. Read it before
 starting development and update it whenever a major feature is implemented or
@@ -454,7 +454,15 @@ Approved screens in Stitch project `5169674594013355245`:
 - During testing, the configured sender used resend.dev, which restricts ordinary
   recipients to the Resend account email. Sending to other users requires a
   verified owned domain. Delivery beyond that testing restriction has not been
-  verified in this session; generic provider-error handling remains unchanged.
+  verified in this session.
+- Follow-up on 2026-11-17: invitation delivery errors distinguish network
+  failures, rejected credentials, sender/permission failures, invalid email
+  requests, rate limits, and provider outages without returning provider payloads
+  or secrets. When the Resend testing sender is configured, 403 errors now
+  explain that it cannot be used to invite other recipients. The local screenshot
+  shows `onboarding@resend.dev`; sending invitations to other people requires a
+  sender on a domain verified in Resend. No live email was sent or provider
+  credentials verified during this follow-up.
 
 ## 7. Member roles and removal
 
